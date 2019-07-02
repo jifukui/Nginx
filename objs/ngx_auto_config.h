@@ -1,4 +1,4 @@
-#define NGX_CONFIGURE " --prefix=./jifukui"
+#define NGX_CONFIGURE " --prefix=./jifukui --with-cc-opt='-g -O0'"
 
 #ifndef NGX_COMPILER
 #define NGX_COMPILER  "gcc 4.8.5 20150623 (Red Hat 4.8.5-16) (GCC) "

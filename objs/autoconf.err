@@ -108,7 +108,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -176,7 +176,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -198,14 +198,14 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
 checking for crypt()
 
-/tmp/cclkqPy1.o: In function `main':
-autotest.c:(.text+0x19): undefined reference to `crypt'
+/tmp/ccpqpC8D.o: In function `main':
+/home/jifukui/jifukuistudy/sourcecode/Nginx/objs/autotest.c:7: undefined reference to `crypt'
 collect2: error: ld returned 1 exit status
 ----------
 
@@ -219,7 +219,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -246,7 +246,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -277,7 +277,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -301,7 +301,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -315,9 +315,9 @@ checking for statvfs()
 ----------------------------------------
 checking for dlopen()
 
-/tmp/cc4FoVeH.o: In function `main':
-autotest.c:(.text+0x19): undefined reference to `dlopen'
-autotest.c:(.text+0x2d): undefined reference to `dlsym'
+/tmp/ccDQSaz5.o: In function `main':
+/home/jifukui/jifukuistudy/sourcecode/Nginx/objs/autotest.c:7: undefined reference to `dlopen'
+/home/jifukui/jifukuistudy/sourcecode/Nginx/objs/autotest.c:7: undefined reference to `dlsym'
 collect2: error: ld returned 1 exit status
 ----------
 
@@ -331,7 +331,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -366,7 +366,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -393,7 +393,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -416,7 +416,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -444,7 +444,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -468,7 +468,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -492,7 +492,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -516,7 +516,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -626,8 +626,8 @@ checking for AF_INET6
 ----------------------------------------
 checking for setproctitle()
 
-/tmp/cc4Mdpzt.o: In function `main':
-autotest.c:(.text+0x11): undefined reference to `setproctitle'
+/tmp/cc85gA63.o: In function `main':
+/home/jifukui/jifukuistudy/sourcecode/Nginx/objs/autotest.c:7: undefined reference to `setproctitle'
 collect2: error: ld returned 1 exit status
 ----------
 
@@ -641,7 +641,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -659,8 +659,8 @@ checking for pwritev()
 ----------------------------------------
 checking for sys_nerr
 
-/tmp/ccqt9tnP.o: In function `main':
-autotest.c:(.text+0xa): warning: `sys_nerr' is deprecated; use `strerror' or `strerror_r' instead
+/tmp/ccO7H3Tj.o: In function `main':
+/home/jifukui/jifukuistudy/sourcecode/Nginx/objs/autotest.c:8: warning: `sys_nerr' is deprecated; use `strerror' or `strerror_r' instead
 135
 ----------------------------------------
 checking for localtime_r()
@@ -693,9 +693,9 @@ checking for System V shared memory
 ----------------------------------------
 checking for POSIX semaphores
 
-/tmp/cc6P9WIk.o: In function `main':
-autotest.c:(.text+0x21): undefined reference to `sem_init'
-autotest.c:(.text+0x39): undefined reference to `sem_destroy'
+/tmp/ccUsuBx1.o: In function `main':
+/home/jifukui/jifukuistudy/sourcecode/Nginx/objs/autotest.c:8: undefined reference to `sem_init'
+/home/jifukui/jifukuistudy/sourcecode/Nginx/objs/autotest.c:9: undefined reference to `sem_destroy'
 collect2: error: ld returned 1 exit status
 ----------
 
@@ -711,7 +711,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------
@@ -754,7 +754,7 @@ int main(void) {
 }
 
 ----------
-cc -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
+cc -g -O0 -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -o objs/autotest objs/autotest.c
 ----------
 
 ----------------------------------------

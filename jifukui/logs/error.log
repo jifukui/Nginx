@@ -1,0 +1,8 @@
+2019/07/02 15:12:54 [emerg] 9458#0: open() "./jifukui/./jifukui/conf/nginx.conf" failed (2: No such file or directory)
+2019/07/02 15:13:39 [emerg] 9465#0: open() "./jifukui/./jifukui/conf/nginx.conf" failed (2: No such file or directory)
+2019/07/02 15:14:12 [emerg] 9473#0: open() "./jifukui/./jifukui/conf/nginx.conf" failed (2: No such file or directory)
+2019/07/02 15:20:44 [error] 9512#0: *1 open() "./jifukui/html/favicon.ico" failed (2: No such file or directory), client: 192.168.20.33, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.20.107", referrer: "http://192.168.20.107/"
+2019/07/02 15:21:30 [error] 9512#0: *3 open() "./jifukui/html/favicon.ico" failed (2: No such file or directory), client: 192.168.20.107, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.20.107"
+2019/07/02 15:21:30 [error] 9512#0: *3 open() "./jifukui/html/favicon.ico" failed (2: No such file or directory), client: 192.168.20.107, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.20.107"
+2019/07/02 15:22:24 [error] 9512#0: *4 open() "./jifukui/html/favicon.ico" failed (2: No such file or directory), client: 192.168.20.47, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.20.107"
+2019/07/02 15:26:54 [error] 9512#0: *6 open() "./jifukui/html/favicon.ico" failed (2: No such file or directory), client: 192.168.20.47, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.20.107"
