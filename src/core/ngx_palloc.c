@@ -14,14 +14,14 @@ static ngx_inline void *ngx_palloc_small(ngx_pool_t *pool, size_t size,
 static void *ngx_palloc_block(ngx_pool_t *pool, size_t size);
 static void *ngx_palloc_large(ngx_pool_t *pool, size_t size);
 
-
-ngx_pool_t *
-ngx_create_pool(size_t size, ngx_log_t *log)
+/**创建*/
+ngx_pool_t *ngx_create_pool(size_t size, ngx_log_t *log)
 {
     ngx_pool_t  *p;
 
     p = ngx_memalign(NGX_POOL_ALIGNMENT, size, log);
-    if (p == NULL) {
+    if (p == NULL) 
+    {
         return NULL;
     }
 
@@ -42,18 +42,17 @@ ngx_create_pool(size_t size, ngx_log_t *log)
     return p;
 }
 
-
-void
-ngx_destroy_pool(ngx_pool_t *pool)
+/**释放 */
+void ngx_destroy_pool(ngx_pool_t *pool)
 {
     ngx_pool_t          *p, *n;
     ngx_pool_large_t    *l;
     ngx_pool_cleanup_t  *c;
 
     for (c = pool->cleanup; c; c = c->next) {
-        if (c->handler) {
-            ngx_log_debug1(NGX_LOG_DEBUG_ALLOC, pool->log, 0,
-                           "run cleanup: %p", c);
+        if (c->handler) 
+        {
+            ngx_log_debug1(NGX_LOG_DEBUG_ALLOC, pool->log, 0,"run cleanup: %p", c);
             c->handler(c->data);
         }
     }
@@ -80,24 +79,27 @@ ngx_destroy_pool(ngx_pool_t *pool)
 
 #endif
 
-    for (l = pool->large; l; l = l->next) {
-        if (l->alloc) {
+    for (l = pool->large; l; l = l->next) 
+    {
+        if (l->alloc) 
+        {
             ngx_free(l->alloc);
         }
     }
 
-    for (p = pool, n = pool->d.next; /* void */; p = n, n = n->d.next) {
+    for (p = pool, n = pool->d.next; /* void */; p = n, n = n->d.next) 
+    {
         ngx_free(p);
 
-        if (n == NULL) {
+        if (n == NULL) 
+        {
             break;
         }
     }
 }
 
 
-void
-ngx_reset_pool(ngx_pool_t *pool)
+void ngx_reset_pool(ngx_pool_t *pool)
 {
     ngx_pool_t        *p;
     ngx_pool_large_t  *l;
@@ -119,8 +121,7 @@ ngx_reset_pool(ngx_pool_t *pool)
 }
 
 
-void *
-ngx_palloc(ngx_pool_t *pool, size_t size)
+void *ngx_palloc(ngx_pool_t *pool, size_t size)
 {
 #if !(NGX_DEBUG_PALLOC)
     if (size <= pool->max) {

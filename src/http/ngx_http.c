@@ -116,8 +116,7 @@ ngx_module_t  ngx_http_module = {
 };
 
 
-static char *
-ngx_http_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
+static char *ngx_http_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 {
     char                        *rv;
     ngx_uint_t                   mi, m, s;
@@ -128,7 +127,8 @@ ngx_http_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
     ngx_http_core_srv_conf_t   **cscfp;
     ngx_http_core_main_conf_t   *cmcf;
 
-    if (*(ngx_http_conf_ctx_t **) conf) {
+    if (*(ngx_http_conf_ctx_t **) conf) 
+    {
         return "is duplicate";
     }
 
@@ -2047,22 +2047,23 @@ ngx_http_merge_types(ngx_conf_t *cf, ngx_array_t **keys, ngx_hash_t *types_hash,
 
 }
 
-
-ngx_int_t
-ngx_http_set_default_types(ngx_conf_t *cf, ngx_array_t **types,
-    ngx_str_t *default_type)
+/**设置默认类型*/
+ngx_int_t ngx_http_set_default_types(ngx_conf_t *cf, ngx_array_t **types,ngx_str_t *default_type)
 {
     ngx_hash_key_t  *type;
 
     *types = ngx_array_create(cf->temp_pool, 1, sizeof(ngx_hash_key_t));
-    if (*types == NULL) {
+    if (*types == NULL) 
+    {
         return NGX_ERROR;
     }
 
-    while (default_type->len) {
+    while (default_type->len) 
+    {
 
         type = ngx_array_push(*types);
-        if (type == NULL) {
+        if (type == NULL) 
+        {
             return NGX_ERROR;
         }
 

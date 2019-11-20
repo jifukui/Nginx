@@ -313,9 +313,8 @@ ngx_log_errno(u_char *buf, u_char *last, ngx_err_t err)
     return buf;
 }
 
-
-ngx_log_t *
-ngx_log_init(u_char *prefix)
+/**初始化日志 */
+ngx_log_t * ngx_log_init(u_char *prefix)
 {
     u_char  *p, *name;
     size_t   nlen, plen;
@@ -332,7 +331,8 @@ ngx_log_init(u_char *prefix)
 
     nlen = ngx_strlen(name);
 
-    if (nlen == 0) {
+    if (nlen == 0) 
+    {
         ngx_log_file.fd = ngx_stderr;
         return &ngx_log;
     }
@@ -340,15 +340,20 @@ ngx_log_init(u_char *prefix)
     p = NULL;
 
 #if (NGX_WIN32)
-    if (name[1] != ':') {
+    if (name[1] != ':') 
+    {
 #else
-    if (name[0] != '/') {
+    if (name[0] != '/') 
+    {
 #endif
 
-        if (prefix) {
+        if (prefix) 
+        {
             plen = ngx_strlen(prefix);
 
-        } else {
+        } 
+        else 
+        {
 #ifdef NGX_PREFIX
             prefix = (u_char *) NGX_PREFIX;
             plen = ngx_strlen(prefix);
@@ -392,7 +397,8 @@ ngx_log_init(u_char *prefix)
         ngx_log_file.fd = ngx_stderr;
     }
 
-    if (p) {
+    if (p) 
+    {
         ngx_free(p);
     }
 
@@ -400,8 +406,7 @@ ngx_log_init(u_char *prefix)
 }
 
 
-ngx_int_t
-ngx_log_open_default(ngx_cycle_t *cycle)
+ngx_int_t ngx_log_open_default(ngx_cycle_t *cycle)
 {
     ngx_log_t         *log;
     static ngx_str_t   error_log = ngx_string(NGX_ERROR_LOG_PATH);

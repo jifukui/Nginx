@@ -61,9 +61,8 @@ static u_char            cached_syslog_time[NGX_TIME_SLOTS]
 static char  *week[] = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
 static char  *months[] = { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
                            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
-
-void
-ngx_time_init(void)
+/**时间初始化函数 */
+void ngx_time_init(void)
 {
     ngx_cached_err_log_time.len = sizeof("1970/09/28 12:00:00") - 1;
     ngx_cached_http_time.len = sizeof("Mon, 28 Sep 1970 06:00:00 GMT") - 1;
@@ -77,8 +76,7 @@ ngx_time_init(void)
 }
 
 
-void
-ngx_time_update(void)
+void ngx_time_update(void)
 {
     u_char          *p0, *p1, *p2, *p3, *p4;
     ngx_tm_t         tm, gmt;
@@ -87,10 +85,11 @@ ngx_time_update(void)
     ngx_time_t      *tp;
     struct timeval   tv;
 
-    if (!ngx_trylock(&ngx_time_lock)) {
+    if (!ngx_trylock(&ngx_time_lock)) 
+    {
         return;
     }
-
+    /**获取当前时间 */
     ngx_gettimeofday(&tv);
 
     sec = tv.tv_sec;
@@ -100,7 +99,8 @@ ngx_time_update(void)
 
     tp = &cached_time[slot];
 
-    if (tp->sec == sec) {
+    if (tp->sec == sec) 
+    {
         tp->msec = msec;
         ngx_unlock(&ngx_time_lock);
         return;

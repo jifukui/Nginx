@@ -59,10 +59,10 @@ sysctl_t sysctls[] = {
     { NULL, NULL, 0, 0 }
 };
 
-
-void
-ngx_debug_init(void)
+/**判断是否能够设置或者是读取环境变量MallocScribble*/
+void ngx_debug_init(void)
 {
+    /**判断是否定义NGX_DEBUG_MALLOC的值为非0的值*/
 #if (NGX_DEBUG_MALLOC)
 
     /*
@@ -73,14 +73,15 @@ ngx_debug_init(void)
      * MacOSX 10.3:        MallocScribble fills freed memory with 0x55,
      *                     and no way to fill allocated memory.
      */
-
+    /**设置环境变量MallocScribble的值为1且可以被忽略*/
     setenv("MallocScribble", "1", 0);
 
     ngx_debug_malloc = 1;
 
 #else
 
-    if (getenv("MallocScribble")) {
+    if (getenv("MallocScribble")) 
+    {
         ngx_debug_malloc = 1;
     }
 

@@ -70,8 +70,7 @@ ngx_module_t  ngx_stream_module = {
 };
 
 
-static char *
-ngx_stream_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
+static char * ngx_stream_block(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 {
     char                          *rv;
     ngx_uint_t                     i, m, mi, s;

@@ -43,8 +43,9 @@ typedef struct {
     (str)->len = sizeof(text) - 1; (str)->data = (u_char *) text
 #define ngx_str_null(str)   (str)->len = 0; (str)->data = NULL
 
-
+/**转换为小写 */
 #define ngx_tolower(c)      (u_char) ((c >= 'A' && c <= 'Z') ? (c | 0x20) : c)
+/**转换为大写 */
 #define ngx_toupper(c)      (u_char) ((c >= 'a' && c <= 'z') ? (c & ~0x20) : c)
 
 void ngx_strlow(u_char *dst, u_char *src, size_t n);

@@ -29,8 +29,7 @@ static ngx_str_t  *ngx_sys_errlist;
 static ngx_str_t   ngx_unknown_error = ngx_string("Unknown error");
 
 
-u_char *
-ngx_strerror(ngx_err_t err, u_char *errstr, size_t size)
+u_char *ngx_strerror(ngx_err_t err, u_char *errstr, size_t size)
 {
     ngx_str_t  *msg;
 
@@ -41,9 +40,8 @@ ngx_strerror(ngx_err_t err, u_char *errstr, size_t size)
     return ngx_cpymem(errstr, msg->data, size);
 }
 
-
-ngx_int_t
-ngx_strerror_init(void)
+/**初始化错误字符串 */
+ngx_int_t ngx_strerror_init(void)
 {
     char       *msg;
     u_char     *p;
@@ -58,16 +56,20 @@ ngx_strerror_init(void)
     len = NGX_SYS_NERR * sizeof(ngx_str_t);
 
     ngx_sys_errlist = malloc(len);
-    if (ngx_sys_errlist == NULL) {
+    /**判断分配内存是否成功*/
+    if (ngx_sys_errlist == NULL) 
+    {
         goto failed;
     }
 
-    for (err = 0; err < NGX_SYS_NERR; err++) {
+    for (err = 0; err < NGX_SYS_NERR; err++) 
+    {
         msg = strerror(err);
         len = ngx_strlen(msg);
 
         p = malloc(len);
-        if (p == NULL) {
+        if (p == NULL) 
+        {
             goto failed;
         }
 
@@ -79,7 +81,7 @@ ngx_strerror_init(void)
     return NGX_OK;
 
 failed:
-
+    /**输出错误日志信息 */
     err = errno;
     ngx_log_stderr(0, "malloc(%uz) failed (%d: %s)", len, err, strerror(err));
 

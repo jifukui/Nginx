@@ -16,11 +16,11 @@ static void ngx_encode_base64_internal(ngx_str_t *dst, ngx_str_t *src,
 static ngx_int_t ngx_decode_base64_internal(ngx_str_t *dst, ngx_str_t *src,
     const u_char *basis);
 
-
-void
-ngx_strlow(u_char *dst, u_char *src, size_t n)
+/**将字符串的大写转换为小写 */
+void ngx_strlow(u_char *dst, u_char *src, size_t n)
 {
-    while (n) {
+    while (n) 
+    {
         *dst = ngx_tolower(*src);
         dst++;
         src++;
@@ -28,15 +28,15 @@ ngx_strlow(u_char *dst, u_char *src, size_t n)
     }
 }
 
-
-size_t
-ngx_strnlen(u_char *p, size_t n)
+/**获取字符串的长度 */
+size_t ngx_strnlen(u_char *p, size_t n)
 {
     size_t  i;
 
-    for (i = 0; i < n; i++) {
-
-        if (p[i] == '\0') {
+    for (i = 0; i < n; i++) 
+    {
+        if (p[i] == '\0') 
+        {
             return i;
         }
     }
@@ -45,14 +45,15 @@ ngx_strnlen(u_char *p, size_t n)
 }
 
 
-u_char *
-ngx_cpystrn(u_char *dst, u_char *src, size_t n)
+u_char * ngx_cpystrn(u_char *dst, u_char *src, size_t n)
 {
-    if (n == 0) {
+    if (n == 0) 
+    {
         return dst;
     }
 
-    while (--n) {
+    while (--n) 
+    {
         *dst = *src;
 
         if (*dst == '\0') {
@@ -159,8 +160,7 @@ ngx_slprintf(u_char *buf, u_char *last, const char *fmt, ...)
 }
 
 
-u_char *
-ngx_vslprintf(u_char *buf, u_char *last, const char *fmt, va_list args)
+u_char * ngx_vslprintf(u_char *buf, u_char *last, const char *fmt, va_list args)
 {
     u_char                *p, zero;
     int                    d;
@@ -490,8 +490,7 @@ ngx_vslprintf(u_char *buf, u_char *last, const char *fmt, va_list args)
 }
 
 
-static u_char *
-ngx_sprintf_num(u_char *buf, u_char *last, uint64_t ui64, u_char zero,
+static u_char *ngx_sprintf_num(u_char *buf, u_char *last, uint64_t ui64, u_char zero,
     ngx_uint_t hexadecimal, ngx_uint_t width)
 {
     u_char         *p, temp[NGX_INT64_LEN + 1];
@@ -583,8 +582,7 @@ ngx_sprintf_num(u_char *buf, u_char *last, uint64_t ui64, u_char zero,
  * instead of the u_char's, because they are slightly faster.
  */
 
-ngx_int_t
-ngx_strcasecmp(u_char *s1, u_char *s2)
+ngx_int_t ngx_strcasecmp(u_char *s1, u_char *s2)
 {
     ngx_uint_t  c1, c2;
 
